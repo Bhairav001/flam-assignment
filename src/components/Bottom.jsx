@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BottomSheet } from 'react-spring-bottom-sheet';
 import 'react-spring-bottom-sheet/dist/style.css';
-import "./App.css";
-const App = () => {
+
+const Bottom = () => {
   const [sheetPosition, setSheetPosition] = useState(0); // 0: closed, 1: half-open, 2: fully open
 
   const snapPoints = [50, '50%', '90%'];
@@ -60,4 +60,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Bottom;
