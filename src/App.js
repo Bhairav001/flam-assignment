@@ -1,63 +1,38 @@
+// src/App.js
 import React, { useState } from 'react';
-import { BottomSheet } from 'react-spring-bottom-sheet';
-import 'react-spring-bottom-sheet/dist/style.css';
-import "./App.css";
-const App = () => {
-  const [sheetPosition, setSheetPosition] = useState(0); // 0: closed, 1: half-open, 2: fully open
+import './App.css';
 
-  const snapPoints = [50, '50%', '90%'];
-  const handleSnap = (pointIndex) => {
-    setSheetPosition(pointIndex);
-  };
+function App() {
+  const [showParagraph, setShowParagraph] = useState(false);
 
-  const handleDrag = (percentage) => {
-    // Update the position based on drag percentage
-    const currentPosition = sheetPosition === 0 ? 0 : sheetPosition === 1 ? 0.5 : 1;
-    const newPosition = currentPosition + percentage / 100;
-
-    if (newPosition <= 0) {
-      setSheetPosition(0);
-    } else if (newPosition <= 0.5) {
-      setSheetPosition(1);
-    } else {
-      setSheetPosition(2);
-    }
-  };
-
-  const handleOpenClick = () => {
-    setSheetPosition(2);
-  };
-
-  const handleCloseClick = () => {
-    setSheetPosition(0);
+  const handleButtonClick = () => {
+    setShowParagraph(!showParagraph);
   };
 
   return (
-    <BottomSheet
-      snapPoints={snapPoints}
-      initialSnap={0}
-      header={<div className="header">Header</div>}
-      onDismiss={() => setSheetPosition(0)} // Reset position when dismissed
-      onSnap={handleSnap}
-      onDrag={handleDrag}
-    >
-      {(snap) => (
-        <div className="content" {...snap}>
-          <div className={`content-container position-${sheetPosition}`}>
-            <div className="closed-content">
-              <p>Handle or indicator here</p>
-            </div>
-            <div className="half-open-content">
-              <p>Revealed content here</p>
-            </div>
-            <div className="fully-open-content">
-              <p>Full content here</p>
-            </div>
-          </div>
-        </div>
-      )}
-    </BottomSheet>
+    <div className="container">
+      <h1>Bottom Sheet Animation</h1>
+      <div className="button-container">
+        <button className="button" onClick={handleButtonClick}>
+          {showParagraph ? 'Hide Paragraph' : 'Show Paragraph'}
+        </button>
+      </div>
+      <p className={`animated-paragraph ${showParagraph ? 'show-paragraph' : ''}`}>
+        Industry Ready In Just
+        25 - 35 Weeks
+        Curriculum At Masai Is Designed To Be Intensive & Extensive. With Our Unique Pedagogy Learn Right In Less Time. All We Ask Is Your Dedication!
+        Elevate yellow-vectorYour Career Possibilities
+        It doesn’t matter where you come from, we know how to get you to your dream career.
+
+        Our graduates consistently outperform students from top Indian engineering colleges & universities. 70% of companies who have hired 1 Masai graduate come back to us with their hiring mandates.
+        NSDC Certification is a prestigious recognition for students who have completed accredited skill-based training programs. It validates their expertise, demonstrating their dedication to practical skills. This certification provides a competitive edge in the job market, showcasing proficiency and adherence to industry standards. NSDC certifications are widely accepted, unlocking rewarding career opportunities and personal growth.
+        NSDC Certification is a prestigious recognition for students who have completed accredited skill-based training programs. It validates their expertise, demonstrating their dedication to practical skills. This certification provides a competitive edge in the job market, showcasing proficiency and adherence to industry standards. NSDC certifications are widely accepted, unlocking rewarding career opportunities and personal growth.
+        NSDC Certification is a prestigious recognition for students who have completed accredited skill-based training programs. It validates their expertise, demonstrating their dedication to practical skills. This certification provides a competitive edge in the job market, showcasing proficiency and adherence to industry standards. NSDC certifications are widely accepted, unlocking rewarding career opportunities and personal growth.
+        NSDC Certification is a prestigious recognition for students who have completed accredited skill-based training programs. It validates their expertise, demonstrating their dedication to practical skills. This certification provides a competitive edge in the job market, showcasing proficiency and adherence to industry standards. NSDC certifications are widely accepted, unlocking rewarding career opportunities and personal growth.
+        NSDC Certification is a prestigious recognition for students who have completed accredited skill-based training programs. It validates their expertise, demonstrating their dedication to practical skills. This certification provides a competitive edge in the job market, showcasing proficiency and adherence to industry standards. NSDC certifications are widely accepted, unlocking rewarding career opportunities and personal growth.
+      </p>
+    </div>
   );
-};
+}
 
 export default App;

@@ -1,75 +1,47 @@
-/* BottomSheet.css */
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
 
-.header {
+.container {
+  text-align: center;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.button {
   background-color: #007bff;
   color: #fff;
-  padding: 16px;
-  text-align: center;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.content {
-  background-color: #fff;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+.button:hover {
+  background-color: #0056b3;
 }
 
-.content-container {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  transition: transform 0.3s ease-in-out;
+.animated-paragraph {
+  display: none;
+  font-size: 24px;
+  animation: slide-up 0.5s ease;
 }
 
-.position-0 {
-  transform: translateY(100%);
-}
-
-.position-1 {
-  transform: translateY(50%);
-}
-
-.position-2 {
-  transform: translateY(0);
-}
-
-.closed-content {
-  background-color: #eee;
-  padding: 16px;
-  border-radius: 16px;
-  text-align: center;
-}
-
-.half-open-content {
-  background-color: #f0f0f0;
-  padding: 16px;
-  border-radius: 16px;
-  text-align: center;
-}
-
-.fully-open-content {
-  background-color: #fff;
-  padding: 16px;
-  border-radius: 16px;
-  text-align: left;
-}
-
-/* Media query for responsiveness */
-@media screen and (max-width: 768px) {
-  .content-container {
-    padding: 8px;
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
   }
-
-  .position-0,
-  .position-1,
-  .position-2 {
+  100% {
     transform: translateY(0);
-  }
-
-  .closed-content,
-  .half-open-content,
-  .fully-open-content {
-    border-radius: 0;
   }
 }
