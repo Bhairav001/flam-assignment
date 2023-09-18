@@ -1,5 +1,8 @@
-# Getting Started with Create React App
-
+# Bottom Sheet animation 
+<h2>With click on button</h2>
+<img src="https://cdn-images-1.medium.com/max/800/1*sMomdmgeQAwWMXo3Bd-i1Q.png"/>
+<h2>Button Hide</h2>
+<img src="https://cdn-images-1.medium.com/max/800/1*zlObFpKAJtoVU9MqzaAonQ.png"/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
